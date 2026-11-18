@@ -1,0 +1,286 @@
+/* ==========================================================
+   IMD 318 | Personal Resume Website
+   Stylesheet contents:
+   1. Design tokens (colours, fonts, spacing)
+   2. Base / reset
+   3. Layout (sidebar + content)
+   4. Sidebar
+   5. Content sections
+   6. Components (timeline, chips, projects)
+   7. Responsive rules
+   ========================================================== */
+
+/* ---------- 1. Design tokens ---------- */
+:root {
+  --ink: #14213d;        /* main text, sidebar background */
+  --paper: #f3f6f8;      /* page background */
+  --teal: #0b7a7c;       /* links and timeline markers */
+  --teal-dark: #085e60;  /* link hover */
+  --sun: #f2b134;        /* highlight on sidebar */
+  --mist: #d9e3e8;       /* borders and chip background */
+  --muted: #4a5568;      /* secondary text */
+
+  --font-head: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --font-body: "Public Sans", "Segoe UI", Arial, sans-serif;
+
+  --sidebar-width: 18rem;
+}
+
+/* ---------- 2. Base / reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  line-height: 1.15;
+  margin: 0;
+}
+
+p, ul, ol { margin: 0; }
+
+a { color: var(--teal); text-underline-offset: 3px; }
+a:hover { color: var(--teal-dark); }
+
+/* Visible keyboard focus for accessibility */
+a:focus-visible {
+  outline: 3px solid var(--sun);
+  outline-offset: 3px;
+}
+
+/* Skip link: hidden until focused with the keyboard */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--sun);
+  color: var(--ink);
+  z-index: 10;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ---------- 3. Layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 100vh;
+}
+
+/* ---------- 4. Sidebar ---------- */
+.sidebar {
+  position: sticky;      /* stays in view while content scrolls */
+  top: 0;
+  height: 100vh;
+  padding: 2.5rem 1.75rem;
+  background: var(--ink);
+  color: #fff;
+  overflow-y: auto;
+}
+
+.avatar {
+  display: block;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  border: 4px solid var(--sun);
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+/* The name is the one big typographic moment on the page */
+.name {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.role {
+  margin-top: 0.75rem;
+  color: var(--mist);
+  font-size: 0.975rem;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.nav-list a {
+  display: block;
+  padding: 0.45rem 0.75rem;
+  border-left: 3px solid transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  border-left-color: var(--sun);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+/* ---------- 5. Content sections ---------- */
+.content {
+  padding: 3rem clamp(1.25rem, 5vw, 4.5rem) 2rem;
+  max-width: 58rem;
+}
+
+.content section {
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--mist);
+  scroll-margin-top: 1.5rem;   /* keeps heading clear of the top edge after nav jump */
+}
+
+.content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.content p + p { margin-top: 1rem; }
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0.15rem 0 0.5rem;
+}
+
+/* ---------- 6. Components ---------- */
+
+/* Timeline (education + experience) */
+.timeline {
+  list-style: none;
+  padding: 0 0 0 1.75rem;
+  border-left: 2px solid var(--mist);
+  display: grid;
+  gap: 2rem;
+}
+
+.timeline > li { position: relative; }
+
+.timeline > li::before {          /* round marker on the line */
+  content: "";
+  position: absolute;
+  left: calc(-1.75rem - 7px);
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--teal);
+  border: 2px solid var(--paper);
+}
+
+.timeline ul { padding-left: 1.2rem; }
+.timeline ul li + li { margin-top: 0.25rem; }
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 2rem;
+}
+
+.chips {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips li {
+  padding: 0.25rem 0.8rem;
+  background: var(--mist);
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+/* Projects */
+.project {
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border-left: 4px solid var(--teal);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.project + .project { margin-top: 1rem; }
+.project h3 { margin-bottom: 0.4rem; }
+
+/* Contact */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* Footer */
+.footer {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- 7. Responsive rules ---------- */
+
+/* Tablet and phone: sidebar becomes a top banner */
+@media (max-width: 52rem) {
+  .layout { grid-template-columns: 1fr; }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    padding: 2rem 1.25rem 1.25rem;
+  }
+
+  .name { font-size: 2.1rem; }
+
+  .nav-list {
+    margin-top: 1.5rem;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 0.25rem;
+    overflow-x: auto;        /* nav scrolls sideways if it does not fit */
+  }
+
+  .nav-list a {
+    border-left: 0;
+    border-bottom: 3px solid transparent;
+  }
+  .nav-list a:hover,
+  .nav-list a:focus-visible { border-bottom-color: var(--sun); }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
