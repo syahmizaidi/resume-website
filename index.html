@@ -1,164 +1,353 @@
+
 <!DOCTYPE html>
-<!-- IMD 318 | Personal Resume Website
-     Edit every line marked "EDIT" with your own details. -->
+<!-- IMD 318 | Personal Resume Website -->
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Resume website of Your Name, a UiTM student in web and information management.">
-  <title>Your Name | Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fonts: Bricolage Grotesque (headings) + Public Sans (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Personal resume of Muhammad Syahmi, Information Management student at UiTM.">
 
-  <!-- External stylesheet -->
-  <link rel="stylesheet" href="style.css">
+    <title>Muhammad Syahmi | Personal Resume</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="layout">
+<a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- ===== SIDEBAR: identity + navigation ===== -->
+<div class="layout">
+
+    <!-- SIDEBAR -->
     <header class="sidebar">
-      <!-- Gambar: letak fail anda dalam folder images dan namakan profile.jpg -->
-      <img class="avatar" alt="Gambar potret saya"
-           src="images/profile.jpg"
-           width="120" height="120">
 
-      <h1 class="name">Your Name</h1>
-      <p class="role">Diploma student, UiTM<br>Aspiring web developer</p>
+        <!-- Profile Picture -->
+        <img
+            class="avatar"
+            src="profile.png"
+            alt="Profile picture of Muhammad Syahmi"
+            width="120"
+            height="120"
+        >
 
-      <nav aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="#about">About me</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+        <h1 class="name">Muhammad Syahmi</h1>
+
+        <p class="role">
+            Diploma in Information Management<br>
+            Universiti Teknologi MARA (UiTM)
+        </p>
+
+        <!-- Navigation -->
+        <nav aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
     </header>
 
-    <!-- ===== MAIN CONTENT ===== -->
+
+    <!-- MAIN CONTENT -->
     <main id="main" class="content">
 
-      <!-- About -->
-      <section id="about" aria-labelledby="about-title">
-        <h2 id="about-title">About me</h2>
-        <!-- EDIT: write 2 to 3 sentences about yourself -->
-        <p class="lead">I am a student at Universiti Teknologi MARA who enjoys turning ideas into clear, usable web pages. I like tidy code, simple layouts and content that is easy to read.</p>
-        <p>Outside class I enjoy photography and helping classmates debug their first HTML pages. I am looking for an internship where I can learn from a development team and contribute to real projects.</p>
-      </section>
+        <!-- ABOUT ME -->
+        <section id="about" aria-labelledby="about-title">
 
-      <!-- Education: a real sequence, so it is shown as a timeline -->
-      <section id="education" aria-labelledby="education-title">
-        <h2 id="education-title">Education</h2>
-        <ol class="timeline">
-          <li>
-            <h3>Diploma in Information Management</h3>
-            <p class="meta">Universiti Teknologi MARA (UiTM) &ndash; 2024 to present</p>
-            <p>Courses include IMD 318 (web development), database basics and information systems. Current CGPA: 3.50 <!-- EDIT --></p>
-          </li>
-          <li>
-            <h3>Sijil Pelajaran Malaysia (SPM)</h3>
-            <p class="meta">Your School Name &ndash; 2023</p>
-            <p>Core subjects with credits in Mathematics and English. <!-- EDIT --></p>
-          </li>
-        </ol>
-      </section>
+            <h2 id="about-title">About Me</h2>
 
-      <!-- Experience -->
-      <section id="experience" aria-labelledby="experience-title">
-        <h2 id="experience-title">Experience</h2>
-        <ol class="timeline">
-          <li>
-            <h3>Student Volunteer, Faculty Open Day</h3>
-            <p class="meta">UiTM &ndash; 2025</p>
-            <ul>
-              <li>Guided more than 100 visitors around exhibition booths.</li>
-              <li>Helped set up the registration table and the event signage.</li>
+            <p class="lead">
+                I am an Information Management student at Universiti Teknologi MARA (UiTM).
+                I am interested in information management, digital media, web design and
+                creative content development.
+            </p>
+
+            <p>
+                I enjoy learning new skills, exploring creative ideas and improving my
+                knowledge in technology. I am also interested in developing my
+                communication, teamwork and problem-solving abilities through academic
+                projects and practical experiences.
+            </p>
+
+        </section>
+
+
+        <!-- EDUCATION -->
+        <section id="education" aria-labelledby="education-title">
+
+            <h2 id="education-title">Education</h2>
+
+            <ol class="timeline">
+
+                <li>
+                    <h3>Diploma in Information Management</h3>
+
+                    <p class="meta">
+                        Universiti Teknologi MARA (UiTM)
+                        &ndash; 2024 to Present
+                    </p>
+
+                    <p>
+                        Studying Information Management with exposure to records
+                        management, information systems, database management and
+                        web development.
+                    </p>
+                </li>
+
+                <li>
+                    <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+
+                    <p class="meta">
+                        [Your Secondary School] &ndash; [Year]
+                    </p>
+
+                    <p>
+                        Completed secondary education and obtained the Sijil
+                        Pelajaran Malaysia qualification.
+                    </p>
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- EXPERIENCE -->
+        <section id="experience" aria-labelledby="experience-title">
+
+            <h2 id="experience-title">Experience</h2>
+
+            <ol class="timeline">
+
+                <li>
+                    <h3>Industrial Training</h3>
+
+                    <p class="meta">
+                        Unit Komunikasi & Korporat,
+                        UiTM Puncak Perdana
+                        &ndash; 2026
+                    </p>
+
+                    <ul>
+                        <li>
+                            Assisted in preparing corporate materials,
+                            official letters and promotional content.
+                        </li>
+
+                        <li>
+                            Designed posters and social media content
+                            for faculty programmes and activities.
+                        </li>
+
+                        <li>
+                            Assisted in photography and website content
+                            preparation.
+                        </li>
+
+                        <li>
+                            Participated in programme preparation,
+                            documentation and administrative tasks.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h3>Student Programme Involvement</h3>
+
+                    <p class="meta">
+                        Universiti Teknologi MARA (UiTM)
+                    </p>
+
+                    <ul>
+                        <li>
+                            Participated in academic and faculty
+                            programme activities.
+                        </li>
+
+                        <li>
+                            Assisted with event preparation,
+                            coordination and promotional materials.
+                        </li>
+                    </ul>
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section id="skills" aria-labelledby="skills-title">
+
+            <h2 id="skills-title">Skills</h2>
+
+            <div class="skills-grid">
+
+                <div>
+                    <h3>Technical Skills</h3>
+
+                    <ul class="chips">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Canva</li>
+                        <li>Microsoft Word</li>
+                        <li>Microsoft PowerPoint</li>
+                        <li>Microsoft Excel</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Personal Skills</h3>
+
+                    <ul class="chips">
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Time Management</li>
+                        <li>Creativity</li>
+                        <li>Problem Solving</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Languages</h3>
+
+                    <ul class="chips">
+                        <li>Bahasa Melayu</li>
+                        <li>English</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section id="projects" aria-labelledby="projects-title">
+
+            <h2 id="projects-title">Projects</h2>
+
+            <article class="project">
+
+                <h3>Personal Resume Website</h3>
+
+                <p>
+                    Developed a personal resume website using HTML and CSS
+                    as part of the IMD 318 individual assignment.
+                    The website showcases personal information,
+                    education, skills and experience.
+                </p>
+
+                <p>
+                    <a href="https://github.com/YOUR-USERNAME/resume-website"
+                       target="_blank"
+                       rel="noopener">
+                        View GitHub Repository
+                    </a>
+                </p>
+
+            </article>
+
+
+            <article class="project">
+
+                <h3>Digital Poster and Promotional Materials</h3>
+
+                <p>
+                    Created digital posters, promotional materials
+                    and social media content using Canva for
+                    academic and faculty activities.
+                </p>
+
+            </article>
+
+
+            <article class="project">
+
+                <h3>I-LISS 2026 Conference</h3>
+
+                <p>
+                    Assisted in programme preparation, promotional
+                    design, social media content and event coordination
+                    for the 10th International Library and Information
+                    Science Society Conference 2026.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact" aria-labelledby="contact-title">
+
+            <h2 id="contact-title">Contact</h2>
+
+            <p>
+                Feel free to contact me for professional,
+                academic or collaboration opportunities.
+            </p>
+
+            <ul class="contact-list">
+
+                <li>
+                    Email:
+                    <a href="mailto:YOUR-EMAIL@example.com">
+                        YOUR-EMAIL@example.com
+                    </a>
+                </li>
+
+                <li>
+                    GitHub:
+                    <a href="https://github.com/YOUR-USERNAME"
+                       target="_blank"
+                       rel="noopener">
+                        My GitHub Profile
+                    </a>
+                </li>
+
+                <li>
+                    LinkedIn:
+                    [Add your LinkedIn profile]
+                </li>
+
+                <li>
+                    Location: Malaysia
+                </li>
+
             </ul>
-          </li>
-          <li>
-            <h3>Part-time Sales Assistant</h3>
-            <p class="meta">Your Workplace &ndash; 2023 to 2024</p>
-            <ul>
-              <li>Served customers and handled daily cash reports.</li>
-              <li>Learned to work under pressure and to communicate clearly.</li>
-            </ul>
-          </li>
-        </ol>
-      </section>
 
-      <!-- Skills -->
-      <section id="skills" aria-labelledby="skills-title">
-        <h2 id="skills-title">Skills</h2>
-        <div class="skills-grid">
-          <div>
-            <h3>Technical</h3>
-            <ul class="chips">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>Git and GitHub</li>
-              <li>Microsoft Office</li>
-              <li>Canva</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Personal</h3>
-            <ul class="chips">
-              <li>Communication</li>
-              <li>Teamwork</li>
-              <li>Time management</li>
-              <li>Fast learner</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Languages</h3>
-            <ul class="chips">
-              <li>Bahasa Melayu (native)</li>
-              <li>English (good)</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Projects -->
-      <section id="projects" aria-labelledby="projects-title">
-        <h2 id="projects-title">Projects</h2>
-        <article class="project">
-          <h3>Personal Resume Website</h3>
-          <p>This site. Built with semantic HTML and a single CSS file, then hosted on GitHub Pages for IMD 318.</p>
-          <!-- EDIT: replace the link with your repository URL -->
-          <p><a href="https://github.com/your-username/your-repository" target="_blank" rel="noopener">View the repository on GitHub</a></p>
-        </article>
-        <article class="project">
-          <h3>Class Event Poster</h3>
-          <p>Designed a poster and social media post for a faculty charity run using Canva.</p>
-        </article>
-      </section>
 
-      <!-- Contact -->
-      <section id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">Contact</h2>
-        <p>The best way to reach me is by email.</p>
-        <!-- EDIT: replace with your real details -->
-        <ul class="contact-list">
-          <li>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></li>
-          <li>GitHub: <a href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener">linkedin.com/in/your-username</a></li>
-          <li>Location: Selangor, Malaysia</li>
-        </ul>
-      </section>
+        <!-- FOOTER -->
+        <footer class="footer">
 
-      <footer class="footer">
-        <p>&copy; 2026 Your Name. Made for IMD 318, UiTM.</p>
-      </footer>
+            <p>
+                &copy; 2026 Muhammad Syahmi.
+                Personal Resume Website | IMD 318, UiTM.
+            </p>
+
+        </footer>
+
     </main>
-  </div>
+
+</div>
+
 </body>
 </html>
