@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- IMD 318 | Personal Resume Website
+     Edit every line marked "EDIT" with your own details. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resume website of Your Name, a UiTM student in web and information management.">
+  <title>Your Name | Resume</title>
+
+  <!-- Fonts: Bricolage Grotesque (headings) + Public Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="layout">
+
+    <!-- ===== SIDEBAR: identity + navigation ===== -->
+    <header class="sidebar">
+      <!-- EDIT: replace src with your photo, e.g. images/profile.jpg -->
+      <img class="avatar" alt="Portrait of Your Name"
+           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23d9e3e8'/%3E%3Ccircle cx='60' cy='46' r='22' fill='%2314213d'/%3E%3Cpath d='M16 120c4-30 26-44 44-44s40 14 44 44z' fill='%2314213d'/%3E%3C/svg%3E"
+           width="120" height="120">
+
+      <h1 class="name">Your Name</h1>
+      <p class="role">Diploma student, UiTM<br>Aspiring web developer</p>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#about">About me</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main" class="content">
+
+      <!-- About -->
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About me</h2>
+        <!-- EDIT: write 2 to 3 sentences about yourself -->
+        <p class="lead">I am a student at Universiti Teknologi MARA who enjoys turning ideas into clear, usable web pages. I like tidy code, simple layouts and content that is easy to read.</p>
+        <p>Outside class I enjoy photography and helping classmates debug their first HTML pages. I am looking for an internship where I can learn from a development team and contribute to real projects.</p>
+      </section>
+
+      <!-- Education: a real sequence, so it is shown as a timeline -->
+      <section id="education" aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        <ol class="timeline">
+          <li>
+            <h3>Diploma in Information Management</h3>
+            <p class="meta">Universiti Teknologi MARA (UiTM) &ndash; 2024 to present</p>
+            <p>Courses include IMD 318 (web development), database basics and information systems. Current CGPA: 3.50 <!-- EDIT --></p>
+          </li>
+          <li>
+            <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+            <p class="meta">Your School Name &ndash; 2023</p>
+            <p>Core subjects with credits in Mathematics and English. <!-- EDIT --></p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+        <ol class="timeline">
+          <li>
+            <h3>Student Volunteer, Faculty Open Day</h3>
+            <p class="meta">UiTM &ndash; 2025</p>
+            <ul>
+              <li>Guided more than 100 visitors around exhibition booths.</li>
+              <li>Helped set up the registration table and the event signage.</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Part-time Sales Assistant</h3>
+            <p class="meta">Your Workplace &ndash; 2023 to 2024</p>
+            <ul>
+              <li>Served customers and handled daily cash reports.</li>
+              <li>Learned to work under pressure and to communicate clearly.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills</h2>
+        <div class="skills-grid">
+          <div>
+            <h3>Technical</h3>
+            <ul class="chips">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Git and GitHub</li>
+              <li>Microsoft Office</li>
+              <li>Canva</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Personal</h3>
+            <ul class="chips">
+              <li>Communication</li>
+              <li>Teamwork</li>
+              <li>Time management</li>
+              <li>Fast learner</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Languages</h3>
+            <ul class="chips">
+              <li>Bahasa Melayu (native)</li>
+              <li>English (good)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <article class="project">
+          <h3>Personal Resume Website</h3>
+          <p>This site. Built with semantic HTML and a single CSS file, then hosted on GitHub Pages for IMD 318.</p>
+          <!-- EDIT: replace the link with your repository URL -->
+          <p><a href="https://github.com/your-username/your-repository" target="_blank" rel="noopener">View the repository on GitHub</a></p>
+        </article>
+        <article class="project">
+          <h3>Class Event Poster</h3>
+          <p>Designed a poster and social media post for a faculty charity run using Canva.</p>
+        </article>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <p>The best way to reach me is by email.</p>
+        <!-- EDIT: replace with your real details -->
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></li>
+          <li>GitHub: <a href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener">linkedin.com/in/your-username</a></li>
+          <li>Location: Selangor, Malaysia</li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; 2026 Your Name. Made for IMD 318, UiTM.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
