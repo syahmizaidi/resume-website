@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<!-- IMD 318 | Personal Resume Website (friendly version)
+<!-- IMD 318 | Personal Resume Website (university portal style)
+     Layout inspired by the UiTM Faculty of Information Science website.
      Edit every line marked "EDIT" with your own details. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Friendly resume website of Your Name, a UiTM student who loves building for the web.">
+  <meta name="description" content="Resume website of Your Name, a UiTM Faculty of Information Science student.">
   <title>Your Name | Resume</title>
 
-  <!-- Fonts: Fredoka (headings) + Nunito (body) -->
+  <!-- Fonts: Poppins (headings) + Open Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- External stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -19,154 +20,39 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ===== TOP NAVIGATION ===== -->
+  <!-- ===== TOP BAR: quick contact + links ===== -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <ul class="topbar-contact">
+        <li><a href="tel:+60123456789">+60 12-345 6789</a></li>        <!-- EDIT -->
+        <li><a href="mailto:yourname@example.com">yourname@example.com</a></li> <!-- EDIT -->
+      </ul>
+      <ul class="topbar-links">
+        <li><a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://uitm.edu.my" target="_blank" rel="noopener">UiTM</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== HEADER: brand + main menu ===== -->
   <header class="site-header">
-    <nav aria-label="Main navigation">
-      <a class="logo" href="#top" aria-label="Back to top">YN</a> <!-- EDIT: your initials -->
-      <ul class="nav-list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">YN</span> <!-- EDIT: your initials -->
+        <span class="brand-text">
+          <strong>Your Name</strong>
+          <small>Personal Resume</small>
+        </span>
+      </a>
 
-  <main id="main">
-
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="top" aria-label="Introduction">
-      <div class="hero-text">
-        <p class="hello">Hello there! &#128075;</p>
-        <h1>I'm <span class="highlight">Your Name</span></h1> <!-- EDIT: your name -->
-        <p class="tagline">A diploma student at UiTM who loves turning ideas into friendly, easy-to-use web pages.</p>
-        <div class="hero-buttons">
-          <a class="btn btn--coral" href="#contact">Say hi</a>
-          <a class="btn btn--ghost" href="#projects">See my projects</a>
-        </div>
-      </div>
-
-      <!-- Put your photo in the images folder and name it profile.jpg -->
-      <img class="avatar" src="images/profile.jpg" alt="Photo of Your Name" width="320" height="320">
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="card card--mint" id="about" aria-labelledby="about-title">
-      <h2 class="section-title" id="about-title">About me</h2>
-      <!-- EDIT: write a few sentences in your own voice -->
-      <p class="lead">I'm a student at Universiti Teknologi MARA who enjoys making things look good and work well. I like tidy code, bright colours and pages that anyone can read easily.</p>
-      <p>When I'm not coding, you'll find me taking photos, trying new cafes or helping friends fix their first HTML pages. I'm looking for an internship where I can learn from a team and work on real projects.</p>
-    </section>
-
-    <!-- ===== EDUCATION ===== -->
-    <section class="card card--sky" id="education" aria-labelledby="education-title">
-      <h2 class="section-title" id="education-title">Education</h2>
-      <ol class="timeline">
-        <li>
-          <h3>Diploma in Information Management</h3>
-          <p class="meta">Universiti Teknologi MARA (UiTM) &middot; 2024 to present</p>
-          <p>Studying web development (IMD 318), databases and information systems. Current CGPA: 3.50 <!-- EDIT --></p>
-        </li>
-        <li>
-          <h3>Sijil Pelajaran Malaysia (SPM)</h3>
-          <p class="meta">Your School Name &middot; 2023</p>
-          <p>Credits in Mathematics and English. <!-- EDIT --></p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section class="card card--yellow" id="experience" aria-labelledby="experience-title">
-      <h2 class="section-title" id="experience-title">Experience</h2>
-      <ol class="timeline">
-        <li>
-          <h3>Student Volunteer, Faculty Open Day</h3>
-          <p class="meta">UiTM &middot; 2025</p>
-          <ul>
-            <li>Welcomed and guided 100+ visitors around the exhibition.</li>
-            <li>Helped set up the registration table and event signs.</li>
-          </ul>
-        </li>
-        <li>
-          <h3>Part-time Sales Assistant</h3>
-          <p class="meta">Your Workplace &middot; 2023 to 2024</p>
-          <ul>
-            <li>Served customers and prepared daily cash reports.</li>
-            <li>Learned to stay calm under pressure and communicate clearly.</li>
-          </ul>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section class="card card--coral" id="skills" aria-labelledby="skills-title">
-      <h2 class="section-title" id="skills-title">Skills</h2>
-      <div class="skills-grid">
-        <div>
-          <h3>Tech stuff</h3>
-          <ul class="chips">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>Git and GitHub</li>
-            <li>Microsoft Office</li>
-            <li>Canva</li>
-          </ul>
-        </div>
-        <div>
-          <h3>People stuff</h3>
-          <ul class="chips">
-            <li>Communication</li>
-            <li>Teamwork</li>
-            <li>Time management</li>
-            <li>Fast learner</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Languages</h3>
-          <ul class="chips">
-            <li>Bahasa Melayu (native)</li>
-            <li>English (good)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section class="card card--violet" id="projects" aria-labelledby="projects-title">
-      <h2 class="section-title" id="projects-title">Projects</h2>
-      <div class="project-grid">
-        <article class="project">
-          <h3>My Resume Website</h3>
-          <p>The site you're looking at! Built with semantic HTML and one CSS file, then hosted on GitHub Pages for IMD 318.</p>
-          <!-- EDIT: replace with your repository URL -->
-          <p><a href="https://github.com/your-username/your-repository" target="_blank" rel="noopener">View on GitHub</a></p>
-        </article>
-        <article class="project">
-          <h3>Charity Run Poster</h3>
-          <p>Designed a poster and social media post for a faculty charity run using Canva.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section class="card card--mint" id="contact" aria-labelledby="contact-title">
-      <h2 class="section-title" id="contact-title">Let's talk</h2>
-      <p>I'd love to hear from you. Email is the fastest way to reach me.</p>
-      <!-- EDIT: replace with your real details -->
-      <ul class="contact-list">
-        <li><a class="btn btn--coral" href="mailto:yourname@example.com">Email me</a></li>
-        <li><a class="btn btn--ghost" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
-      <p class="location">Based in Selangor, Malaysia</p>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <p>Made with &#9829; for IMD 318, UiTM &middot; &copy; 2026 Your Name</p>
-  </footer>
-</body>
-</html>
+      <nav aria-label="Main navigation">
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
