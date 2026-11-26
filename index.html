@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Resume website of Your Name, a UiTM Diploma in Information Management student.">
+  <meta name="description" content="Resume website of Muhammad Syahmi, a UiTM Diploma in Information Management student.">
   <title>Muhammad Syahmi | Personal Resume Website</title>
 
   <!-- Fonts: Cormorant Garamond (display) + Montserrat (headings and body) -->
@@ -23,7 +23,7 @@
   <!-- ===== TOP STRIP ===== -->
   <div class="topstrip">
     <div class="container topstrip-inner">
-      <p>Diploma in Information Management | UiTM</p> <!-- EDIT -->
+      <p>Diploma in Information Management | UiTM</p>
       <ul>
         <li><a href="#contact">Contact me</a></li>
         <li><a class="btn btn--small" href="mailto:yourname@example.com">Hire me</a></li> <!-- EDIT -->
@@ -34,8 +34,8 @@
   <!-- ===== HEADER + MAIN MENU ===== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Your Name, back to top">
-        <span class="brand-mark" aria-hidden="true">MS</span> <!-- EDIT: your initials -->
+      <a class="brand" href="#home" aria-label="Muhammad Syahmi, back to top">
+        <span class="brand-mark" aria-hidden="true">MS</span>
         <span class="brand-name">Muhammad Syahmi</span>
       </a>
 
@@ -55,8 +55,15 @@
 
   <main id="main">
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO (banner image) ===== -->
     <section class="hero" id="home" aria-label="Introduction">
+      <!-- Hidden heading for screen readers and search engines, because the name is inside the image -->
+      <h1 class="visually-hidden">Muhammad Syahmi</h1>
+
+      <!-- Put your banner in the images folder and name it banner.png -->
+      <img class="hero-banner" src="images/banner.png"
+           alt="Personal Resume: Muhammad Syahmi, Faculty of Information Science, Diploma in Information Management (SI110). Life isn't about finding yourself, life is about creating yourself."
+           width="1024" height="336">
     </section>
 
     <!-- ===== AT A GLANCE BAR ===== -->
@@ -92,10 +99,9 @@
 
         <div class="about-grid">
           <!-- Put your photo in the images folder and name it profile.jpg -->
-          <img class="about-photo" src="images/profile.jpg" alt="Photo of Your Name" width="420" height="520">
+          <img class="about-photo" src="images/profile.jpg" alt="Photo of Muhammad Syahmi" width="420" height="520">
 
           <div class="about-text">
-            <!-- EDIT: write a few sentences about yourself -->
             <p>My name is Muhammad Syahmi Bin Zaidi, and I am a Diploma in Information Management student at Universiti Teknologi MARA (UiTM). I have a strong interest in information management, digital technology, and web design. I am a responsible, hardworking, and adaptable person who enjoys learning new skills and gaining practical experience. I am always eager to improve my knowledge, develop my abilities, and explore new opportunities for my personal and professional growth.</p>
             <p>My goal is to continuously grow both personally and professionally by embracing new challenges and learning from every experience. I aspire to expand my knowledge, develop valuable skills, and gain practical experience that will prepare me for future career opportunities. I hope to build a successful career while becoming a confident, responsible, and capable individual.</p>
             <a class="btn btn--dark" href="#projects">See my projects</a>
@@ -105,4 +111,38 @@
     </section>
 
     <!-- ===== EDUCATION ===== -->
-    <section class="section section--alt" id="education"
+    <section class="section section--alt" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Education</p>
+          <h2 id="education-title">Where I studied</h2>
+        </header>
+
+        <ol class="timeline">
+          <li>
+            <p class="year">2024</p>
+            <div class="timeline-body">
+              <h3>Diploma in Information Management</h3>
+              <p class="meta">Universiti Teknologi MARA (UiTM) | 2024 to present</p>
+              <p>Studying web development (IMD 318), databases and information systems. Current CGPA: 3.50 <!-- EDIT --></p>
+            </div>
+          </li>
+          <li>
+            <p class="year">2023</p>
+            <div class="timeline-body">
+              <h3>Sijil Pelajaran Malaysia | 2023</h3>
+              <p class="meta">Sekolah Menengah Kebangsaan Bukit Gading | 2023</p>
+              <p>Achieved 8A+ in the Sijil Pelajaran Malaysia (SPM) examination.</p>
+            </div>
+          </li>
+          <li>
+            <p class="year">2018</p>
+            <div class="timeline-body">
+              <h3>Ujian Pencapaian Sekolah Rendah (UPSR)</h3>
+              <p class="meta">Sekolah Kebangsaan Merbau Sempak | 2018</p>
+              <p>Achieved 6A+ in the Ujian Pencapaian Sekolah Rendah (UPSR) examination.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
