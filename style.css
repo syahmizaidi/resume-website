@@ -4,7 +4,7 @@
    1. Design tokens (change colours here)
    2. Base / reset
    3. Top strip and header
-   4. Hero and at-a-glance bar
+   4. Hero banner and at-a-glance bar
    5. Sections and headings
    6. About, timeline, skills, projects
    7. Buttons
@@ -61,6 +61,19 @@ a:focus-visible {
   max-width: 70rem;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+/* Hidden visually, but still read by screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Skip link: hidden until focused with the keyboard */
@@ -126,4 +139,402 @@ a:focus-visible {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.7
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--navy);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.menu a {
+  display: block;
+  padding: 0.3rem 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover { border-bottom-color: var(--gold); color: var(--navy); }
+
+/* ---------- 4. Hero banner and at-a-glance bar ---------- */
+.hero {
+  scroll-margin-top: 6rem;
+  background: var(--navy);   /* shown while the image loads */
+  line-height: 0;            /* removes the gap under the image */
+}
+
+.hero-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Floating bar placed under the banner, like a booking bar */
+.glance {
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  align-items: center;
+  gap: 1.25rem 1.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--white);
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 12px 32px rgba(15, 31, 61, 0.18);
+}
+
+.glance dt {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.glance dd {
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 0.2rem;
+}
+
+/* ---------- 5. Sections and headings ---------- */
+.section {
+  position: relative;
+  padding: 6rem 0 5rem;
+  scroll-margin-top: 5rem;
+}
+
+.section--alt { background: var(--cream); }
+
+/* Soft wave at the top edge of tinted sections and the footer */
+.section--alt::before,
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -59px;
+  height: 60px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.section--alt::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C240 0 480 0 720 30 S1200 60 1440 0 V60 Z' fill='%23f6f1e8'/%3E%3C/svg%3E");
+}
+
+.site-footer::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C240 0 480 0 720 30 S1200 60 1440 0 V60 Z' fill='%230f1f3d'/%3E%3C/svg%3E");
+}
+
+.section-head {
+  max-width: 40rem;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.section-head h2 {
+  margin-top: 0.6rem;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.section-head h2::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  margin: 1.1rem auto 0;
+  background: var(--gold);
+}
+
+/* ---------- 6. About, timeline, skills, projects ---------- */
+
+/* About: photo + text */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--cream);
+  box-shadow: 14px 14px 0 var(--gold);
+}
+
+.about-text .btn { margin-top: 1.75rem; }
+
+/* Timeline (education + experience) */
+.timeline {
+  list-style: none;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.timeline > li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+}
+.timeline > li:last-child { border-bottom: 1px solid var(--line); }
+
+.year {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.timeline h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.meta {
+  margin: 0.3rem 0 0.7rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.timeline ul { padding-left: 1.2rem; }
+
+/* Skills */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.75rem;
+}
+
+.skill {
+  padding: 2rem 1.75rem;
+  background: var(--white);
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 6px 20px rgba(15, 31, 61, 0.08);
+}
+
+.skill-no {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.skill h3 {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.skill-note {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Projects: image panel + text, alternating sides */
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 3rem;
+  max-width: 62rem;
+  margin: 0 auto 4rem;
+}
+.project:last-child { margin-bottom: 0; }
+.project:nth-of-type(even) .project-media { order: 2; }
+
+.project-media {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background:
+    radial-gradient(circle at 80% 25%, rgba(201, 169, 106, 0.35), transparent 45%),
+    linear-gradient(135deg, var(--navy), var(--navy-soft));
+}
+
+.project h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.project-body .btn { margin-top: 1.5rem; }
+
+/* ---------- 7. Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.9rem;
+  background: var(--gold);
+  color: var(--navy);
+  border: 2px solid var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+.btn--dark { background: var(--navy); border-color: var(--navy); color: #fff; }
+.btn--dark:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+
+.btn--small { padding: 0.3rem 1.1rem; font-size: 0.7rem; }
+
+/* ---------- 8. Footer ---------- */
+.site-footer {
+  position: relative;
+  margin-top: 4rem;      /* leaves room for the wave edge */
+  background: var(--navy);
+  color: #d4d9e6;
+  font-size: 0.9rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 3rem;
+  padding-top: 4rem;
+  padding-bottom: 3.5rem;
+}
+
+.footer-cta h2 {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.footer-cta .btn { margin-top: 1.5rem; }
+.footer-cta .btn:hover { background: #fff; border-color: #fff; color: var(--navy); }
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 2rem;
+}
+
+.footer-cols h3 {
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.footer-cols ul { list-style: none; padding: 0; display: grid; gap: 0.45rem; }
+
+.site-footer a { color: #fff; text-decoration: none; }
+.site-footer a:hover { color: var(--gold); text-decoration: underline; }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 1.25rem 1.5rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+}
+
+/* ---------- 9. Responsive rules ---------- */
+@media (max-width: 52rem) {
+  .header-inner { justify-content: center; }
+  .menu { justify-content: center; }
+
+  .about-grid,
+  .project,
+  .footer-top { grid-template-columns: 1fr; }
+
+  .about-grid { gap: 2.5rem; }
+  .about-photo { max-width: 22rem; margin: 0 auto; }
+
+  .project { gap: 1.5rem; }
+  .project:nth-of-type(even) .project-media { order: 0; }
+
+  .timeline > li { grid-template-columns: 1fr; gap: 0.5rem; }
+  .year { font-size: 2.6rem; }
+
+  .section { padding: 5rem 0 3.5rem; }
+  .glance { padding: 1.25rem; }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
