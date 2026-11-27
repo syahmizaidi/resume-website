@@ -6,7 +6,7 @@
    3. Top strip and header
    4. Hero banner and at-a-glance bar
    5. Sections and headings
-   6. About, timeline, skills, projects
+   6. About, timeline, experience cards, skills, projects
    7. Buttons
    8. Footer
    9. Responsive rules
@@ -427,6 +427,74 @@ a:focus-visible {
 
 .project-body .btn { margin-top: 1.5rem; }
 
+/* Experience cards: photo box + description box */
+.exp-list {
+  list-style: none;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.exp-card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 20px rgba(15, 31, 61, 0.08);
+}
+
+/* Every second card swaps sides */
+.exp-card:nth-child(even) .exp-photo { order: 2; }
+
+.exp-photo {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: var(--cream);
+}
+
+.exp-photo img {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 15rem;
+  object-fit: cover;       /* crops the photo neatly to fill the box */
+}
+
+.exp-photo figcaption {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--cream);
+}
+
+.exp-body { padding: 2rem; }
+
+.exp-year {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.exp-body h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.exp-desc { margin-bottom: 0.75rem; }
+.exp-body ul { padding-left: 1.2rem; }
+
 /* ---------- 7. Buttons ---------- */
 .btn {
   display: inline-block;
@@ -528,6 +596,10 @@ a:focus-visible {
 
   .timeline > li { grid-template-columns: 1fr; gap: 0.5rem; }
   .year { font-size: 2.6rem; }
+
+  .exp-card { grid-template-columns: 1fr; }
+  .exp-card:nth-child(even) .exp-photo { order: 0; }
+  .exp-body { padding: 1.5rem 1.25rem; }
 
   .section { padding: 5rem 0 3.5rem; }
   .glance { padding: 1.25rem; }
