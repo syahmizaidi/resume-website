@@ -1,366 +1,617 @@
-<!DOCTYPE html>
-<!-- IMD 318 | Personal Resume Website (premium hospitality style)
-     Layout inspired by the Sunway Hotels & Resorts website.
-     Edit every line marked "EDIT" with your own details. -->
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Resume website of Muhammad Syahmi, a UiTM Diploma in Information Management student.">
-  <title>Muhammad Syahmi | Personal Resume Website</title>
+/* ==========================================================
+   IMD 318 | Personal Resume Website (premium hospitality style)
+   Stylesheet contents:
+   1. Design tokens (change colours here)
+   2. Base / reset
+   3. Top strip and header
+   4. Hero banner and at-a-glance bar
+   5. Sections and headings
+   6. About, timeline, experience cards, skills, achievements
+   7. Buttons
+   8. Footer
+   9. Responsive rules
+   ========================================================== */
 
-  <!-- Fonts: Cormorant Garamond (display) + Montserrat (headings and body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+/* ---------- 1. Design tokens ---------- */
+:root {
+  --navy: #0f1f3d;       /* main brand colour */
+  --navy-soft: #1c3260;
+  --gold: #c9a96a;       /* accent for lines and buttons */
+  --gold-deep: #8a6d33;  /* accent text on light backgrounds */
+  --cream: #f6f1e8;      /* alternate section background */
+  --text: #2a2f3a;
+  --muted: #5d6472;
+  --white: #ffffff;
+  --line: #e2dccf;
 
-  <!-- External stylesheet -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Montserrat", "Segoe UI", Arial, sans-serif;
+}
 
-  <!-- ===== TOP STRIP ===== -->
-  <div class="topstrip">
-    <div class="container topstrip-inner">
-      <p>Diploma in Information Management | UiTM</p>
-      <ul>
-        <li><a href="#contact">Contact me</a></li>
-        <li><a class="btn btn--small" href="mailto:yourname@example.com">Hire me</a></li> <!-- EDIT -->
-      </ul>
-    </div>
-  </div>
+/* ---------- 2. Base / reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-  <!-- ===== HEADER + MAIN MENU ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Muhammad Syahmi, back to top">
-        <span class="brand-mark" aria-hidden="true">MS</span>
-        <span class="brand-name">Muhammad Syahmi</span>
-      </a>
+html { scroll-behavior: smooth; }
 
-      <nav aria-label="Main navigation">
-        <ul class="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.975rem;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--white);
+}
 
-  <main id="main">
+h1, h2, h3 { margin: 0; font-weight: 500; line-height: 1.2; }
+p, ul, ol, dl, dd { margin: 0; }
+p + p { margin-top: 1rem; }
 
-    <!-- ===== HERO (banner image) ===== -->
-    <section class="hero" id="home" aria-label="Introduction">
-      <!-- Hidden heading for screen readers and search engines, because the name is inside the image -->
-      <h1 class="visually-hidden">Muhammad Syahmi</h1>
+a { color: var(--navy); }
+a:hover { color: var(--gold-deep); }
 
-      <!-- Put your banner next to index.html and name it banner.png -->
-      <img class="hero-banner" src="banner.png"
-           alt="Personal Resume: Muhammad Syahmi, Faculty of Information Science, Diploma in Information Management (SI110). Life isn't about finding yourself, life is about creating yourself."
-           width="1024" height="336">
-    </section>
+a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
 
-    <!-- ===== AT A GLANCE BAR ===== -->
-    <div class="container">
-      <dl class="glance" aria-label="At a glance">
-        <div>
-          <dt>Programme</dt>
-          <dd>Diploma in Information Management</dd>
-        </div>
-        <div>
-          <dt>University</dt>
-          <dd>Universiti Teknologi MARA</dd>
-        </div>
-        <div>
-          <dt>Graduating</dt>
-          <dd>2027</dd> <!-- EDIT -->
-        </div>
-        <div>
-          <dt>Based in</dt>
-          <dd>Selangor, Malaysia</dd>
-        </div>
-        <a class="btn" href="#contact">Contact me</a>
-      </dl>
-    </div>
+.container {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-    <!-- ===== ABOUT ===== -->
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Name</p>
-          <h2 id="about-title">Muhammad Syahmi Bin Zaidi</h2>
-        </header>
+/* Hidden visually, but still read by screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
-        <div class="about-grid">
-          <!-- Put your photo next to index.html and name it profile.jpg -->
-          <img class="about-photo" src="profile.jpg" alt="Photo of Muhammad Syahmi" width="420" height="520">
+/* Skip link: hidden until focused with the keyboard */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--gold);
+  color: var(--navy);
+  z-index: 40;
+}
+.skip-link:focus { top: 1rem; }
 
-          <div class="about-text">
-            <p>My name is Muhammad Syahmi Bin Zaidi, and I am a Diploma in Information Management student at Universiti Teknologi MARA (UiTM). I have a strong interest in information management, digital technology, and web design. I am a responsible, hardworking, and adaptable person who enjoys learning new skills and gaining practical experience. I am always eager to improve my knowledge, develop my abilities, and explore new opportunities for my personal and professional growth.</p>
-            <p>My goal is to continuously grow both personally and professionally by embracing new challenges and learning from every experience. I aspire to expand my knowledge, develop valuable skills, and gain practical experience that will prepare me for future career opportunities. I hope to build a successful career while becoming a confident, responsible, and capable individual.</p>
-            <a class="btn btn--dark" href="#projects">See my projects</a>
-          </div>
-        </div>
-      </div>
-    </section>
+/* ---------- 3. Top strip and header ---------- */
+.topstrip {
+  background: var(--navy);
+  color: #d9deea;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
-    <!-- ===== EDUCATION ===== -->
-    <section class="section section--alt" id="education" aria-labelledby="education-title">
-      <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Education</p>
-          <h2 id="education-title">Where I studied</h2>
-        </header>
+.topstrip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
 
-        <ol class="timeline">
-          <li>
-            <p class="year">2026</p>
-            <div class="timeline-body">
-              <h3>Diploma in Information Management</h3>
-              <p class="meta">Universiti Teknologi MARA (UiTM) | 2024 to present</p>
-              <p>Studying web development (IMD 318), databases and information systems. Current CGPA: 3.50 <!-- EDIT --></p>
-            </div>
-          </li>
-          <li>
-            <p class="year">2023</p>
-            <div class="timeline-body">
-              <h3>Sijil Pelajaran Malaysia | 2023</h3>
-              <p class="meta">Sekolah Menengah Kebangsaan Bukit Gading | 2023</p>
-              <p>Achieved 8A+ in the Sijil Pelajaran Malaysia (SPM) examination.</p>
-            </div>
-          </li>
-          <li>
-            <p class="year">2018</p>
-            <div class="timeline-body">
-              <h3>Ujian Pencapaian Sekolah Rendah (UPSR)</h3>
-              <p class="meta">Sekolah Kebangsaan Merbau Sempak | 2018</p>
-              <p>Achieved 6A+ in the Ujian Pencapaian Sekolah Rendah (UPSR) examination.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+.topstrip ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
 
-    <!-- ===== EXPERIENCE ===== -->
-    <section class="section" id="experience" aria-labelledby="experience-title">
-      <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Experience</p>
-          <h2 id="experience-title">Where I have worked</h2>
-        </header>
+.topstrip a:not(.btn) { color: #fff; text-decoration: none; }
+.topstrip a:not(.btn):hover { color: var(--gold); }
 
-        <!-- Each experience is one card: a photo box on one side, a description box on the other.
-             To add another experience, copy one <li class="exp-card"> block and edit it. -->
-        <ol class="exp-list">
-          <li class="exp-card">
-            <figure class="exp-photo">
-              <!-- EDIT: put your photo next to index.html and name it experience1.jpg -->
-              <img src="experience1.jpg" alt="Muhammad Syahmi volunteering at the Faculty Open Day" width="640" height="480">
-              <figcaption>Internship, UiTM</figcaption> <!-- EDIT -->
-            </figure>
-            <div class="exp-body">
-              <p class="exp-year">2026</p>
-              <h3>Intern at Corporate and Communications Unit, UiTM Puncak Perdana</h3>
-              <p class="meta">UiTM | 2026</p> <!-- EDIT -->
-              <!-- EDIT: write a short description in your own words -->
-              <p class="exp-desc">The Corporate and Communication Unit at UiTM Puncak Perdana is responsible for managing the faculty's corporate image, communication activities, website content, promotional materials, and public relations while supporting the coordination of programmes and events at both national and international levels.</p>
-              <ul>
-                <li>Assisted in enhancing and updating the Faculty of Information Science website to improve its content and overall presentation.</li>
-                <li>Supported the planning and management of international programmes, including coordination and preparation of promotional materials.</li>
-              </ul>
-            </div>
-          </li>
+.site-header {
+  position: sticky;      /* menu stays visible while scrolling */
+  top: 0;
+  z-index: 30;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
 
-          <li class="exp-card">
-            <figure class="exp-photo">
-              <!-- EDIT: put your photo next to index.html and name it experience2.jpg -->
-              <img src="experience2.jpg" alt="Muhammad Syahmi as a committee member" width="640" height="480">
-              <figcaption>Faculty's Club</figcaption> <!-- EDIT -->
-            </figure>
-            <div class="exp-body">
-              <p class="exp-year">2025-2026</p>
-              <h3>Joining Information Management Society (IMS), Faculty's Club</h3>
-              <p class="meta">IMS | 2025-2026</p> <!-- EDIT -->
-              <!-- EDIT: write a short description in your own words -->
-              <p class="exp-desc">Being a member of the Information Management Society (IMS) provides opportunities to develop leadership, teamwork, and communication skills through participation in faculty activities and programmes.</p>
-              <ul>
-                <li>Actively participated in faculty activities and programmes while contributing to student engagement and teamwork.</li>
-                <li>Assisted in programme preparation, event coordination, and carrying out assigned responsibilities during faculty activities.</li>
-              </ul>
-            </div>
-          </li>
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
 
-          <li class="exp-card">
-            <figure class="exp-photo">
-              <!-- EDIT: put your photo next to index.html and name it experience3.jpg -->
-              <img src="experience3.jpg" alt="Muhammad Syahmi at a workshop" width="640" height="480">
-              <figcaption>Petronas Kuang Members</figcaption> <!-- EDIT -->
-            </figure>
-            <div class="exp-body">
-              <p class="exp-year">2024</p>
-              <h3>FULL-TIME WORK AT PETRONAS KUANG, SELANGOR</h3>
-              <p class="meta">Petronas Kuang, Selangor | 2024</p> <!-- EDIT -->
-              <!-- EDIT: write a short description in your own words -->
-              <p class="exp-desc">Worked full-time after completing SPM while waiting to further my studies at UiTM, gaining valuable working experience and developing essential workplace skills.</p>
-              <ul>
-                <li>Strengthened the ability to think critically, respond quickly, and make effective decisions when handling daily tasks and unexpected situations.</li>
-                <li>Improved public speaking and interpersonal communication skills through daily interactions with customers and colleagues.</li>
-              </ul>
-            </div>
-          </li>
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--navy);
+}
 
-          <li class="exp-card">
-            <figure class="exp-photo">
-              <!-- EDIT: put your photo next to index.html and name it experience4.jpg -->
-              <img src="experience4.jpg" alt="Muhammad Syahmi working on a group project" width="640" height="480">
-              <figcaption>School Cooperative Club</figcaption> <!-- EDIT -->
-            </figure>
-            <div class="exp-body">
-              <p class="exp-year">2018-2023</p>
-              <h3>Leading of School Cooperative Club</h3>
-              <p class="meta">SMK Bukit Gading | 2018-2023</p> <!-- EDIT -->
-              <!-- EDIT: write a short description in your own words -->
-              <p class="exp-desc">Held a leadership position in the School Cooperative Club, overseeing club activities and developing strong leadership, organisational, and teamwork skills.</p>
-              <ul>
-                <li>Developed leadership skills by guiding club members, delegating tasks, and ensuring smooth daily operations.</li>
-                <li>Strengthened teamwork and communication skills through collaboration with teachers and fellow club members.</li>
-              </ul>
-            </div>
-          </li>
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 
-           <li class="exp-card">
-            <figure class="exp-photo">
-              <!-- Put your photo next to index.html and name it experience5.jpg -->
-              <img src="experience5.jpg" alt="Muhammad Syahmi performing a Zapin dance at the Tabika KEMAS Potential Day national-level competition" width="640" height="480">
-              <figcaption>Tabika Minda Ceria, Kampung Merbau Sempak</figcaption>
-            </figure>
-            <div class="exp-body">
-              <p class="exp-year">2012</p>
-              <h3>Tabika KEMAS Potential Day, National Level</h3>
-              <p class="meta">Tabika Minda Ceria | 2012</p>
-              <p class="exp-desc">Participated in a national-level Zapin dance competition, representing the state and showcasing traditional Malay cultural dance alongside participants from other states.</p>
-              <ul>
-                <li><a href="https://youtu.be/fsQsPzdM8T0" target="_blank" rel="noopener">Watch the performance video on YouTube</a></li>
-              </ul>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
 
-    <!-- ===== SKILLS ===== -->
-    <section class="section section--alt" id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Skills</p>
-          <h2 id="skills-title">What I can do</h2>
-        </header>
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
 
-        <div class="skill-grid">
-          <article class="skill">
-            <p class="skill-no" aria-hidden="true">01</p>
-            <h3>LEADERSHIP & COLLABORATION</h3>
-            <p>Proactive in group settings, comfortable leading team initiatives, and committed to achieving shared goals.</p>
-          </article>
-          <article class="skill">
-            <p class="skill-no" aria-hidden="true">02</p>
-            <h3>DIGITAL CONTENT & TOOLS</h3>
-            <p>Proficient in Canva for UI mockups/graphics and Microsoft Office for project reporting.</p>
-          </article>
-          <article class="skill">
-            <p class="skill-no" aria-hidden="true">03</p>
-            <h3>COMMUNICATION & PRESENTATION</h3>
-            <p>Confident in delivering clear presentations, writing professional correspondence, and engaging effectively with diverse audiences.</p>
-          </article>
-          <article class="skill">
-            <p class="skill-no" aria-hidden="true">04</p>
-            <h3>PROBLEM SOLVING</h3>
-            <p>Analytical mindset with the ability to identify challenges quickly, evaluate options, and apply practical solutions.</p>
-          </article>
-        </div>
+.menu a {
+  display: block;
+  padding: 0.3rem 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
 
-        <p class="skill-note">Languages: Bahasa Melayu (native) and English (good)</p>
-      </div>
-    </section>
+.menu a:hover { border-bottom-color: var(--gold); color: var(--navy); }
 
-    <!-- ===== PROJECTS ===== -->
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Projects</p>
-          <h2 id="projects-title">Things I have made</h2>
-        </header>
+/* ---------- 4. Hero banner and at-a-glance bar ---------- */
+.hero {
+  scroll-margin-top: 6rem;
+  background: var(--navy);   /* shown while the image loads */
+  line-height: 0;            /* removes the gap under the image */
+}
 
-        <article class="project">
-          <div class="project-media" aria-hidden="true"><span>Website</span></div>
-          <div class="project-body">
-            <h3>Personal Resume Website</h3>
-            <p>This website, built with semantic HTML and one CSS file, then hosted on GitHub Pages for IMD 318.</p>
-            <!-- EDIT: replace with your repository URL -->
-            <a class="btn btn--dark" href="https://github.com/your-username/your-repository" target="_blank" rel="noopener">View on GitHub</a>
-          </div>
-        </article>
+.hero-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-        <article class="project">
-          <div class="project-media" aria-hidden="true"><span>Poster</span></div>
-          <div class="project-body">
-            <h3>Charity Run Poster</h3>
-            <p>Designed a poster and a social media post for a faculty charity run using Canva.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+/* Floating bar placed under the banner, like a booking bar */
+.glance {
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  align-items: center;
+  gap: 1.25rem 1.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--white);
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 12px 32px rgba(15, 31, 61, 0.18);
+}
 
-  </main>
+.glance dt {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer" id="contact">
-    <div class="container footer-top">
-      <div class="footer-cta">
-        <h2>Get in touch</h2>
-        <p>Have an internship or project in mind? Send me an email and I will reply as soon as I can.</p>
-        <a class="btn" href="mailto:yourname@example.com">Email me</a> <!-- EDIT -->
-      </div>
+.glance dd {
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 0.2rem;
+}
 
-      <div class="footer-cols">
-        <div>
-          <h3>Contact</h3>
-          <ul>
-            <li><a href="mailto:yourname@example.com">yourname@example.com</a></li> <!-- EDIT -->
-            <li><a href="tel:+60123456789">+60 12-345 6789</a></li> <!-- EDIT -->
-            <li>Selangor, Malaysia</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Find me online</h3>
-          <ul>
-            <li><a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a></li> <!-- EDIT -->
-            <li><a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener">LinkedIn</a></li> <!-- EDIT -->
-            <li><a href="https://uitm.edu.my" target="_blank" rel="noopener">UiTM</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Explore</h3>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+/* ---------- 5. Sections and headings ---------- */
+.section {
+  position: relative;
+  padding: 6rem 0 5rem;
+  scroll-margin-top: 5rem;
+}
 
-    <div class="footer-bottom">
-      <p>&copy; 2026 Muhammad Syahmi. All rights reserved. Made for IMD 318, UiTM.</p>
-      <a href="#home">Back to top</a>
-    </div>
-  </footer>
-</body>
-</html>
+.section--alt { background: var(--cream); }
+
+/* Soft wave at the top edge of tinted sections and the footer */
+.section--alt::before,
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -59px;
+  height: 60px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.section--alt::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C240 0 480 0 720 30 S1200 60 1440 0 V60 Z' fill='%23f6f1e8'/%3E%3C/svg%3E");
+}
+
+.site-footer::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C240 0 480 0 720 30 S1200 60 1440 0 V60 Z' fill='%230f1f3d'/%3E%3C/svg%3E");
+}
+
+.section-head {
+  max-width: 40rem;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.section-head h2 {
+  margin-top: 0.6rem;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.section-head h2::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  margin: 1.1rem auto 0;
+  background: var(--gold);
+}
+
+/* ---------- 6. About, timeline, experience cards, skills, achievements ---------- */
+
+/* About: photo + text */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--cream);
+  box-shadow: 14px 14px 0 var(--gold);
+}
+
+.about-text .btn { margin-top: 1.75rem; }
+
+/* Timeline (education + experience) */
+.timeline {
+  list-style: none;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.timeline > li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+}
+.timeline > li:last-child { border-bottom: 1px solid var(--line); }
+
+.year {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.timeline h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.meta {
+  margin: 0.3rem 0 0.7rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.timeline ul { padding-left: 1.2rem; }
+
+/* Skills */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.75rem;
+}
+
+.skill {
+  padding: 2rem 1.75rem;
+  background: var(--white);
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 6px 20px rgba(15, 31, 61, 0.08);
+}
+
+.skill-no {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.skill h3 {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.skill-note {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Achievements: three cards, photo on top and text below */
+.ach-grid {
+  list-style: none;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1.75rem;
+}
+
+.ach-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 20px rgba(15, 31, 61, 0.08);
+}
+
+.ach-photo { margin: 0; background: var(--cream); }
+
+.ach-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;       /* crops the photo neatly to fill the box */
+}
+
+.ach-body { padding: 1.5rem; }
+
+.ach-year {
+  margin-bottom: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.ach-body h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+/* Experience cards: photo box + description box */
+.exp-list {
+  list-style: none;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.exp-card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 20px rgba(15, 31, 61, 0.08);
+}
+
+/* Every second card swaps sides */
+.exp-card:nth-child(even) .exp-photo { order: 2; }
+
+.exp-photo {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: var(--cream);
+}
+
+.exp-photo img {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 15rem;
+  object-fit: cover;       /* crops the photo neatly to fill the box */
+}
+
+.exp-photo figcaption {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--cream);
+}
+
+.exp-body { padding: 2rem; }
+
+.exp-year {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.exp-body h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.exp-desc { margin-bottom: 0.75rem; }
+.exp-body ul { padding-left: 1.2rem; }
+
+/* ---------- 7. Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.9rem;
+  background: var(--gold);
+  color: var(--navy);
+  border: 2px solid var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+.btn--dark { background: var(--navy); border-color: var(--navy); color: #fff; }
+.btn--dark:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+
+.btn--small { padding: 0.3rem 1.1rem; font-size: 0.7rem; }
+
+/* ---------- 8. Footer ---------- */
+.site-footer {
+  position: relative;
+  margin-top: 4rem;      /* leaves room for the wave edge */
+  background: var(--navy);
+  color: #d4d9e6;
+  font-size: 0.9rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 3rem;
+  padding-top: 4rem;
+  padding-bottom: 3.5rem;
+}
+
+.footer-cta h2 {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.footer-cta .btn { margin-top: 1.5rem; }
+.footer-cta .btn:hover { background: #fff; border-color: #fff; color: var(--navy); }
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 2rem;
+}
+
+.footer-cols h3 {
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.footer-cols ul { list-style: none; padding: 0; display: grid; gap: 0.45rem; }
+
+.site-footer a { color: #fff; text-decoration: none; }
+.site-footer a:hover { color: var(--gold); text-decoration: underline; }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 1.25rem 1.5rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+}
+
+/* ---------- 9. Responsive rules ---------- */
+@media (max-width: 52rem) {
+  .header-inner { justify-content: center; }
+  .menu { justify-content: center; }
+
+  .about-grid,
+  .footer-top { grid-template-columns: 1fr; }
+
+  .about-grid { gap: 2.5rem; }
+  .about-photo { max-width: 22rem; margin: 0 auto; }
+
+  .timeline > li { grid-template-columns: 1fr; gap: 0.5rem; }
+  .year { font-size: 2.6rem; }
+
+  .exp-card { grid-template-columns: 1fr; }
+  .exp-card:nth-child(even) .exp-photo { order: 0; }
+  .exp-body { padding: 1.5rem 1.25rem; }
+
+  .section { padding: 5rem 0 3.5rem; }
+  .glance { padding: 1.25rem; }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
