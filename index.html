@@ -60,8 +60,8 @@
       <!-- Hidden heading for screen readers and search engines, because the name is inside the image -->
       <h1 class="visually-hidden">Muhammad Syahmi</h1>
 
-      <!-- Put your banner in the images folder and name it banner.png -->
-      <img class="hero-banner" src="images/banner.png"
+      <!-- Put your banner next to index.html and name it banner.png -->
+      <img class="hero-banner" src="banner.png"
            alt="Personal Resume: Muhammad Syahmi, Faculty of Information Science, Diploma in Information Management (SI110). Life isn't about finding yourself, life is about creating yourself."
            width="1024" height="336">
     </section>
@@ -98,8 +98,8 @@
         </header>
 
         <div class="about-grid">
-          <!-- Put your photo in the images folder and name it profile.jpg -->
-          <img class="about-photo" src="images/profile.jpg" alt="Photo of Muhammad Syahmi" width="420" height="520">
+          <!-- Put your photo next to index.html and name it profile.jpg -->
+          <img class="about-photo" src="profile.jpg" alt="Photo of Muhammad Syahmi" width="420" height="520">
 
           <div class="about-text">
             <p>My name is Muhammad Syahmi Bin Zaidi, and I am a Diploma in Information Management student at Universiti Teknologi MARA (UiTM). I have a strong interest in information management, digital technology, and web design. I am a responsible, hardworking, and adaptable person who enjoys learning new skills and gaining practical experience. I am always eager to improve my knowledge, develop my abilities, and explore new opportunities for my personal and professional growth.</p>
@@ -120,7 +120,7 @@
 
         <ol class="timeline">
           <li>
-            <p class="year">2026</p>
+            <p class="year">2024</p>
             <div class="timeline-body">
               <h3>Diploma in Information Management</h3>
               <p class="meta">Universiti Teknologi MARA (UiTM) | 2024 to present</p>
@@ -155,23 +155,97 @@
           <h2 id="experience-title">Where I have worked</h2>
         </header>
 
-        <ol class="timeline">
-          <li>
-            <p class="year">2025</p>
-            <div class="timeline-body">
+        <!-- Each experience is one card: a photo box on one side, a description box on the other.
+             To add another experience, copy one <li class="exp-card"> block and edit it. -->
+        <ol class="exp-list">
+          <li class="exp-card">
+            <figure class="exp-photo">
+              <!-- EDIT: put your photo next to index.html and name it experience1.jpg -->
+              <img src="experience1.jpg" alt="Muhammad Syahmi volunteering at the Faculty Open Day" width="640" height="480">
+              <figcaption>Faculty Open Day, UiTM</figcaption> <!-- EDIT -->
+            </figure>
+            <div class="exp-body">
+              <p class="exp-year">2025</p>
               <h3>Student Volunteer, Faculty Open Day</h3>
-              <p class="meta">UiTM | 2025</p>
+              <p class="meta">UiTM | 2025</p> <!-- EDIT -->
+              <!-- EDIT: write a short description in your own words -->
+              <p class="exp-desc">Helped the faculty welcome visitors during Open Day and kept the event running smoothly.</p>
               <ul>
                 <li>Welcomed and guided more than 100 visitors around the exhibition.</li>
                 <li>Helped set up the registration table and event signage.</li>
               </ul>
             </div>
           </li>
-          <li>
-            <p class="year">2023</p>
-            <div class="timeline-body">
+
+          <li class="exp-card">
+            <figure class="exp-photo">
+              <!-- EDIT: put your photo next to index.html and name it experience2.jpg -->
+              <img src="experience2.jpg" alt="Muhammad Syahmi as a committee member" width="640" height="480">
+              <figcaption>Your Event or Club</figcaption> <!-- EDIT -->
+            </figure>
+            <div class="exp-body">
+              <p class="exp-year">2025</p>
+              <h3>Committee Member, Your Event or Club</h3>
+              <p class="meta">Your Organisation | 2025</p> <!-- EDIT -->
+              <!-- EDIT: write a short description in your own words -->
+              <p class="exp-desc">Write one or two sentences about your role and what you helped to organise.</p>
+              <ul>
+                <li>Describe one thing you did in this role.</li>
+                <li>Describe another task or result.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="exp-card">
+            <figure class="exp-photo">
+              <!-- EDIT: put your photo next to index.html and name it experience3.jpg -->
+              <img src="experience3.jpg" alt="Muhammad Syahmi at a workshop" width="640" height="480">
+              <figcaption>Your Workshop or Programme</figcaption> <!-- EDIT -->
+            </figure>
+            <div class="exp-body">
+              <p class="exp-year">2024</p>
+              <h3>Participant, Your Workshop or Programme</h3>
+              <p class="meta">Your Organiser | 2024</p> <!-- EDIT -->
+              <!-- EDIT: write a short description in your own words -->
+              <p class="exp-desc">Write one or two sentences about what you joined and what you learned.</p>
+              <ul>
+                <li>Describe one skill you gained.</li>
+                <li>Describe an activity or award, if any.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="exp-card">
+            <figure class="exp-photo">
+              <!-- EDIT: put your photo next to index.html and name it experience4.jpg -->
+              <img src="experience4.jpg" alt="Muhammad Syahmi working on a group project" width="640" height="480">
+              <figcaption>Your Group Project or Competition</figcaption> <!-- EDIT -->
+            </figure>
+            <div class="exp-body">
+              <p class="exp-year">2024</p>
+              <h3>Team Member, Your Group Project or Competition</h3>
+              <p class="meta">UiTM | 2024</p> <!-- EDIT -->
+              <!-- EDIT: write a short description in your own words -->
+              <p class="exp-desc">Write one or two sentences about the project, your part in it and the outcome.</p>
+              <ul>
+                <li>Describe your contribution to the team.</li>
+                <li>Describe the result or what you learned.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="exp-card">
+            <figure class="exp-photo">
+              <!-- EDIT: put your photo next to index.html and name it experience5.jpg -->
+              <img src="experience5.jpg" alt="Muhammad Syahmi at work as a part-time sales assistant" width="640" height="480">
+              <figcaption>Your Workplace</figcaption> <!-- EDIT -->
+            </figure>
+            <div class="exp-body">
+              <p class="exp-year">2023</p>
               <h3>Part-time Sales Assistant</h3>
               <p class="meta">Your Workplace | 2023 to 2024</p> <!-- EDIT -->
+              <!-- EDIT: write a short description in your own words -->
+              <p class="exp-desc">Worked part-time while studying, dealing with customers and handling daily sales tasks.</p>
               <ul>
                 <li>Served customers and prepared daily cash reports.</li>
                 <li>Learned to stay calm under pressure and communicate clearly.</li>
