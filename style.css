@@ -390,14 +390,15 @@ a:focus-visible {
   color: var(--muted);
 }
 
-/* Achievements: cards stacked, photo box 800 x 600 (4:3) on top and text below */
+/* Achievements: three cards in one row, full photo on top and text below */
 .ach-grid {
   list-style: none;
-  max-width: calc(50rem + 2px);   /* photo box = 800px wide on large screens */
+  max-width: 62rem;
   margin: 0 auto;
   padding: 0;
   display: grid;
-  gap: 2.5rem;                    /* cards are stacked, one per row */
+  grid-template-columns: repeat(3, minmax(0, 1fr));   /* left, centre, right */
+  gap: 1.75rem;
 }
 
 .ach-card {
@@ -412,11 +413,10 @@ a:focus-visible {
 .ach-photo img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;       /* crops the photo neatly to fill the box */
+  height: auto;            /* keeps the photo's own shape, so nothing is cropped */
 }
 
-.ach-body { padding: 1.75rem 2rem; }
+.ach-body { padding: 1.5rem; }
 
 .ach-year {
   margin-bottom: 0.4rem;
@@ -604,6 +604,8 @@ a:focus-visible {
   .exp-card { grid-template-columns: 1fr; }
   .exp-card:nth-child(even) .exp-photo { order: 0; }
   .exp-body { padding: 1.5rem 1.25rem; }
+
+  .ach-grid { grid-template-columns: 1fr; max-width: 26rem; }
 
   .section { padding: 5rem 0 3.5rem; }
   .glance { padding: 1.25rem; }
