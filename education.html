@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- IMD 318 | Personal Website: Education page
+     Owner: Muhammad Syahmi Bin Zaidi
+     Files: HTML pages in this folder, css/style.css, js/script.js, images/ and audio/ -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Muhammad Syahmi Bin Zaidi">
+  <meta name="description" content="Education history of Muhammad Syahmi: UPSR, SPM and Diploma in Information Management at UiTM.">
+  <title>Education | Muhammad Syahmi</title>
+
+  <!-- Fonts: Cormorant Garamond (display) + Montserrat (headings and body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- External stylesheet and script (shared by every page) -->
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className += ' js';</script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== TOP STRIP: programme, live clock and accessibility options ===== -->
+  <div class="topstrip">
+    <div class="container topstrip-inner">
+      <p>Diploma in Information Management | UiTM</p>
+      <div class="topstrip-tools">
+        <span class="clock" id="clock" aria-hidden="true"></span>
+        <button type="button" class="tool-btn" id="text-smaller" aria-label="Make text smaller">A-</button>
+        <button type="button" class="tool-btn" id="text-larger" aria-label="Make text larger">A+</button>
+        <button type="button" class="tool-btn" id="contrast-toggle" aria-pressed="false">High contrast</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER + MAIN MENU ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Muhammad Syahmi, home page">
+        <span class="brand-mark" aria-hidden="true">MS</span>
+        <span class="brand-name">Muhammad Syahmi</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="biodata.html">Biodata</a></li>
+          <li><a href="education.html" aria-current="page">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="family.html">Family</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== TITLE BAND ===== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <p class="eyebrow">Education</p>
+      <h1 id="page-title">Where I studied</h1>
+      <p>My school years and my diploma at UiTM.</p>
+    </section>
+
+    <section class="section" id="studies" aria-labelledby="studies-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Education</p>
+          <h2 id="studies-title">My education timeline</h2>
+        </header>
+
+        <ol class="timeline">
+          <li>
+            <p class="year">2026</p>
+            <div class="timeline-body">
+              <h3>Diploma in Information Management</h3>
+              <p class="meta">Universiti Teknologi MARA (UiTM) | 2024 to present</p>
+              <p>Studying web development (IMD 318), databases and information systems. Current CGPA: 3.50</p>
+            </div>
+          </li>
+          <li>
+            <p class="year">2023</p>
+            <div class="timeline-body">
+              <h3>Sijil Pelajaran Malaysia | 2023</h3>
+              <p class="meta">Sekolah Menengah Kebangsaan Bukit Gading | 2023</p>
+              <p>Achieved 8A+ in the Sijil Pelajaran Malaysia (SPM) examination.</p>
+            </div>
+          </li>
+          <li>
+            <p class="year">2018</p>
+            <div class="timeline-body">
+              <h3>Ujian Pencapaian Sekolah Rendah (UPSR)</h3>
+              <p class="meta">Sekolah Kebangsaan Merbau Sempak | 2018</p>
+              <p>Achieved 6A in the Ujian Pencapaian Sekolah Rendah (UPSR) examination.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="page-link"><a href="index.html#journey">See my education, experience and achievements together in one table</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER: contact details and statement of ownership ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-top">
+      <div class="footer-cta">
+        <h2>Get in touch</h2>
+        <p>Have an internship or project in mind? Send me an email and I will reply as soon as I can.</p>
+        <!-- Opens a new Gmail message addressed to me -->
+        <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=syahmizaidi86@gmail.com" target="_blank" rel="noopener">Email me</a>
+      </div>
+
+      <div class="footer-cols">
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=syahmizaidi86@gmail.com" target="_blank" rel="noopener">syahmizaidi86@gmail.com</a></li>
+            <li><a href="tel:+60123375473">+60 12-337 5473</a></li>
+            <li>Selangor, Malaysia</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Find me online</h3>
+          <ul>
+            <li><a href="https://wa.me/60123375473" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/mieyyzaidi_/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@mieyyy06" target="_blank" rel="noopener">TikTok</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">Biodata</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Muhammad Syahmi. All rights reserved. This page is created and maintained by Muhammad Syahmi Bin Zaidi for IMD 318, UiTM.<br>Created: November 2026 | Last updated: 28 November 2026</p>
+      <a href="#main">Back to top</a>
+    </div>
+  </footer>
+
+  <!-- Greeting notification and back-to-top button (controlled by js/script.js) -->
+  <div class="toast" id="toast" role="status" hidden></div>
+  <button type="button" class="to-top" id="to-top" aria-label="Back to top" hidden>&uarr;</button>
+</body>
+</html>
