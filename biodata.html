@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!-- IMD 318 | Personal Website: Biodata page
+     Owner: Muhammad Syahmi Bin Zaidi
+     Files: HTML pages in this folder, css/style.css, js/script.js, images/ and audio/ -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Muhammad Syahmi Bin Zaidi">
+  <meta name="description" content="Biodata, skills, interests and goals of Muhammad Syahmi Bin Zaidi.">
+  <title>Biodata | Muhammad Syahmi</title>
+
+  <!-- Fonts: Cormorant Garamond (display) + Montserrat (headings and body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- External stylesheet and script (shared by every page) -->
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className += ' js';</script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== TOP STRIP: programme, live clock and accessibility options ===== -->
+  <div class="topstrip">
+    <div class="container topstrip-inner">
+      <p>Diploma in Information Management | UiTM</p>
+      <div class="topstrip-tools">
+        <span class="clock" id="clock" aria-hidden="true"></span>
+        <button type="button" class="tool-btn" id="text-smaller" aria-label="Make text smaller">A-</button>
+        <button type="button" class="tool-btn" id="text-larger" aria-label="Make text larger">A+</button>
+        <button type="button" class="tool-btn" id="contrast-toggle" aria-pressed="false">High contrast</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER + MAIN MENU ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Muhammad Syahmi, home page">
+        <span class="brand-mark" aria-hidden="true">MS</span>
+        <span class="brand-name">Muhammad Syahmi</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="biodata.html" aria-current="page">Biodata</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="family.html">Family</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== TITLE BAND ===== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <p class="eyebrow">About me</p>
+      <h1 id="page-title">Biodata</h1>
+      <p>The basic facts about me, my skills and what I hope to achieve.</p>
+    </section>
+
+    <!-- ===== PERSONAL DETAILS ===== -->
+    <section class="section" id="details" aria-labelledby="details-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Personal details</p>
+          <h2 id="details-title">Who I am</h2>
+        </header>
+
+        <div class="about-grid">
+          <img class="about-photo" src="images/profile.jpg" alt="Photo of Muhammad Syahmi" width="420" height="520">
+
+          <div class="table-wrap" tabindex="0" role="region" aria-labelledby="bio-caption">
+            <table class="info-table">
+              <caption id="bio-caption">My biodata</caption>
+              <tbody>
+                <tr><th scope="row">Full name</th><td>Muhammad Syahmi Bin Zaidi</td></tr>
+                <tr><th scope="row">Programme</th><td>Diploma in Information Management (SI110)</td></tr>
+                <tr><th scope="row">Faculty</th><td>Faculty of Information Science</td></tr>
+                <tr><th scope="row">University</th><td>Universiti Teknologi MARA (UiTM)</td></tr>
+                <tr><th scope="row">Graduating</th><td>2027</td></tr>
+                <!-- EDIT: replace the three highlighted lines with your own details -->
+                <tr><th scope="row">Date of birth</th><td><mark class="edit-me">[EDIT: your date of birth]</mark></td></tr>
+                <tr><th scope="row">Place of birth</th><td><mark class="edit-me">[EDIT: your place of birth]</mark></td></tr>
+                <tr><th scope="row">Nationality</th><td><mark class="edit-me">[EDIT: e.g. Malaysian]</mark></td></tr>
+                <tr><th scope="row">Languages</th><td>Bahasa Melayu (native), English (good)</td></tr>
+                <tr><th scope="row">Address</th><td>Selangor, Malaysia</td></tr>
+                <tr><th scope="row">Email</th><td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=syahmizaidi86@gmail.com" target="_blank" rel="noopener">syahmizaidi86@gmail.com</a></td></tr>
+                <tr><th scope="row">Phone</th><td><a href="tel:+60123375473">+60 12-337 5473</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section section--alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Skills</p>
+          <h2 id="skills-title">What I can do</h2>
+        </header>
+
+        <div class="skill-grid">
+          <article class="skill">
+            <p class="skill-no" aria-hidden="true">01</p>
+            <h3>LEADERSHIP &amp; COLLABORATION</h3>
+            <p>Proactive in group settings, comfortable leading team initiatives, and committed to achieving shared goals.</p>
+          </article>
+          <article class="skill">
+            <p class="skill-no" aria-hidden="true">02</p>
+            <h3>DIGITAL CONTENT &amp; TOOLS</h3>
+            <p>Proficient in Canva for UI mockups/graphics and Microsoft Office for project reporting.</p>
+          </article>
+          <article class="skill">
+            <p class="skill-no" aria-hidden="true">03</p>
+            <h3>COMMUNICATION &amp; PRESENTATION</h3>
+            <p>Confident in delivering clear presentations, writing professional correspondence, and engaging effectively with diverse audiences.</p>
+          </article>
+          <article class="skill">
+            <p class="skill-no" aria-hidden="true">04</p>
+            <h3>PROBLEM SOLVING</h3>
+            <p>Analytical mindset with the ability to identify challenges quickly, evaluate options, and apply practical solutions.</p>
+          </article>
+        </div>
+
+        <p class="skill-note">Languages: Bahasa Melayu (native) and English (good)</p>
+      </div>
+    </section>
+
+    <!-- ===== INTERESTS AND GOALS (unordered list with custom marker + ordered list) ===== -->
+    <section class="section" id="interests" aria-labelledby="interests-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Interests and goals</p>
+          <h2 id="interests-title">What I enjoy and where I am heading</h2>
+        </header>
+
+        <div class="two-col">
+          <div>
+            <h3>My interests</h3>
+            <!-- Unordered list with a custom gold diamond marker -->
+            <ul class="marker-list">
+              <li>Information management</li>
+              <li>Digital technology</li>
+              <li>Web design</li>
+              <li>Leadership and club activities</li>
+              <li>Scouting and marching drill</li>
+              <li>Traditional dance (Zapin)</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>My goals</h3>
+            <!-- Ordered list with numbered gold circles -->
+            <ol class="goals" role="list">
+              <li>Keep learning new skills and gaining practical experience.</li>
+              <li>Take on new challenges and learn from every experience.</li>
+              <li>Build a successful career as a confident, responsible and capable individual.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER: contact details and statement of ownership ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-top">
+      <div class="footer-cta">
+        <h2>Get in touch</h2>
+        <p>Have an internship or project in mind? Send me an email and I will reply as soon as I can.</p>
+        <!-- Opens a new Gmail message addressed to me -->
+        <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=syahmizaidi86@gmail.com" target="_blank" rel="noopener">Email me</a>
+      </div>
+
+      <div class="footer-cols">
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=syahmizaidi86@gmail.com" target="_blank" rel="noopener">syahmizaidi86@gmail.com</a></li>
+            <li><a href="tel:+60123375473">+60 12-337 5473</a></li>
+            <li>Selangor, Malaysia</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Find me online</h3>
+          <ul>
+            <li><a href="https://wa.me/60123375473" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/mieyyzaidi_/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@mieyyy06" target="_blank" rel="noopener">TikTok</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">Biodata</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Muhammad Syahmi. All rights reserved. This page is created and maintained by Muhammad Syahmi Bin Zaidi for IMD 318, UiTM.<br>Created: November 2026 | Last updated: 28 November 2026</p>
+      <a href="#main">Back to top</a>
+    </div>
+  </footer>
+
+  <!-- Greeting notification and back-to-top button (controlled by js/script.js) -->
+  <div class="toast" id="toast" role="status" hidden></div>
+  <button type="button" class="to-top" id="to-top" aria-label="Back to top" hidden>&uarr;</button>
+</body>
+</html>
